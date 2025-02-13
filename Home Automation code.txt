@@ -1,0 +1,36 @@
+const int lightPin = 4; // LED for Light
+const int fanPin = 5;   // LED for Fan
+
+void setup() {
+  pinMode(lightPin, OUTPUT);
+  pinMode(fanPin, OUTPUT);
+  Serial.begin(9600);  // Start Serial Monitor
+  Serial.println("Enter 'light on' or 'light off'");
+  Serial.println("Enter 'fan on' or 'fan off'");
+}
+
+void loop() {
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n'); // Read user input
+
+    if (command == "light on") {
+      digitalWrite(lightPin, HIGH);
+      Serial.println("Light Turned ON");
+    } 
+    else if (command == "light off") {
+      digitalWrite(lightPin, LOW);
+      Serial.println("Light Turned OFF");
+    } 
+    else if (command == "fan on") {
+      digitalWrite(fanPin, HIGH);
+      Serial.println("Fan Turned ON");
+    } 
+    else if (command == "fan off") {
+      digitalWrite(fanPin, LOW);
+      Serial.println("Fan Turned OFF");
+    } 
+    else {
+      Serial.println("Invalid Command! Use: light on/off, fan on/off");
+    }
+  }
+}
