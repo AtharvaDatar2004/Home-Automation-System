@@ -42,4 +42,8 @@ Working Principle:
 3.The microcontroller receives these commands and controls the connected appliances.
 4.Automation triggers (e.g., motion detected, temperature threshold exceeded) activate specific devices.
 
+# OUTPUT
+
+![Image](https://github.com/user-attachments/assets/7a7ed176-8795-4829-8587-0f6079eae0e0)
+
 
